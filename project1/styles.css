@@ -1,0 +1,70 @@
+html {
+	background: url("images/starry-background.png");
+}
+
+div.wrapper {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+
+header {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h1 {
+	font-size: 30px;
+	color: yellow;
+}
+
+span {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: yellow;
+}
+
+.board {
+	width: 585px;
+	height: 650px;
+	position: relative;
+	margin: 20px auto 0 auto;
+}
+
+div.box {
+	height: 175px;
+	width: 175px;
+	border: 10px solid yellow;
+	float: left;
+	background-size: 0px 0px;
+	transition: background-size 2s;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.box.one {
+	border-top: white;
+}
+
+.box.three {
+	border-bottom: white;
+}
+
+div.A {
+	border-left: white;
+}
+
+div.C {
+	border-right: white
+}
+
+div.X {
+	background-image: url("images/letter-x.png");
+	background-size: 170px 170px;
+}
+
+div.O {
+	background-image: url("images/letter-o.png");
+	background-size: 170px 170px;
+}
