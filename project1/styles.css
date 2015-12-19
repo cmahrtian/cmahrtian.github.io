@@ -14,23 +14,30 @@ header {
 	text-align: center;
 }
 
-h1 {
-	font-size: 30px;
-	color: yellow;
+header img {
+	height: 160px;
 }
 
-span {
-	font-size: 24px;
-	margin-bottom: 20px;
-	color: yellow;
+.game-center {
+	width: 1050px;
 }
 
 .board {
-	width: 585px;
-	height: 650px;
+	float: left;
+	width: 565px;
+	height: 565px;
 	position: relative;
 	margin: 20px auto 0 auto;
 }
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
 
 div.box {
 	height: 175px;
@@ -67,4 +74,28 @@ div.X {
 div.O {
 	background-image: url("images/letter-o.png");
 	background-size: 170px 170px;
+}
+
+div.status {
+	padding-top: 150px;
+	width: 435px;
+	font-size: 35pt;
+	font-weight: bold;
+	font-family: Helvetica;
+	color: yellow;
+	float: left;
+	text-align: justify;
+	margin-left: 50px;
+	transform-origin: 50% 100%;
+	transform: perspective(500px) rotateX(25deg);
+	animation: scroll100s linear 0s;
+}
+
+@keyframes scroll {
+	0% {
+		top: 1000%;
+	}
+	100% {
+		top: -500%;
+	}
 }

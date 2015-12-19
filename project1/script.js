@@ -1,5 +1,5 @@
-// $(function(){
-// 	"use strict";
+$(function(){
+	"use strict";
 
 	//JQuery Version
 	var firstRow = $(".one");
@@ -8,42 +8,50 @@
 	var firstColumn = $(".A");
 	var secondColumn = $(".B");
 	var thirdColumn = $(".C");
-
 	var clickNumber = 0
 	
 	$(".box").click(function() {
 		clickNumber += 1;
 		if ($(this).hasClass('X') || $(this).hasClass("O")) {
-			$("span").text("That box has already been taken! You lose your turn!");
+			$(".status").text("That box has already been taken! You lose your turn!");
 		} else if (clickNumber % 2 === 1) {
 			$(this).addClass("X");
-			checkPlayerWinner("X");
-			endGame();
-			$("span").text("Player O moves!");
+			if (checkPlayerWinner("X")) {
+				$(".status").text("Player X has won!");
+				$(".box").off("click");
+			} else if (endGame()) {
+				$(".status").text("IT'S A TIE!");
+			} else {
+				$(".status").text("Player O moves!");
+			}
 		} else {
 			$(this).addClass("O");
-			checkPlayerWinner("O");
-			$("span").text("Player X moves!");
+			if (checkPlayerWinner("O")) {
+				$(".status").text("Player O has won!");
+				$(".box").off("click");
+			} else {
+				$(".status").text("Player X moves!");
+			}
 		}	
 	});
 
 	var checkPlayerWinner = function(player) {
 		if ($(".one." +player).length === firstRow.length) {
-			alert("Player " +player+ " wins!");
+			return true;
 		} else if ($(".two." +player).length === secondRow.length) {
-			alert("Player " +player+ " wins!");
+			return true;
 		} else if ($(".three." +player).length === thirdRow.length) {
-			alert("Player " +player+ " wins!");
+			return true;
 		} else if ($(".A." +player).length === firstColumn.length) {
-			alert("Player " +player+ " wins!");
+			return true;
 		} else if ($(".B." +player).length === secondColumn.length) {
-			alert("Player " +player+ " wins!");
+			return true;
 		} else if ($(".C." +player).length === thirdColumn.length) {
-			alert("Player " +player+ " wins!");
+			return true;
 		} else if ($(".one.A").hasClass(player) && $(".two.B").hasClass(player) && $(".three.C").hasClass(player)) {
-			alert("Player " +player+ " wins!");
+			return true;
 		} else if ($(".one.C").hasClass(player) && $(".two.B").hasClass(player) && $(".three.A").hasClass(player)) {
-			alert("Player " +player+ " wins!");
+			return true;
 		} else {
 			return false;
 		}
@@ -51,7 +59,7 @@
 
 	var endGame = function() {
 		if (clickNumber === 9 && checkPlayerWinner("X") === false) {
-			alert("IT'S A TIE!!!");
+			return true;
 		}
 	}
 
@@ -183,4 +191,4 @@
 	// 	}
 	// }
 
-// });	
+});	
