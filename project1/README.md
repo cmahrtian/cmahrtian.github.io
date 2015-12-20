@@ -1,5 +1,7 @@
 # Project 1: Tic-Tac-Toe
 
+![alt text](https://github.com/cmahrtian/cmahrtian.github.io/blob/master/project1/images/title-card-md.png)
+
 ### Student Name
 
 Chris Mahr
