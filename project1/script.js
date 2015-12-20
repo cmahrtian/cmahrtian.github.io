@@ -8,29 +8,43 @@ $(function(){
 	var firstColumn = $(".A");
 	var secondColumn = $(".B");
 	var thirdColumn = $(".C");
-	var clickNumber = 0
+	var clickNumber = 0;
+
+	//Sound Effects
+	var xWing = new Audio ("sounds/x-wing.mp3");
+	var thatsNoMoon = new Audio("sounds/thats-no-moon.mp3");
+	var themeSong = new Audio("sounds/theme-song.mp3");
+	var darkSide = new Audio("sounds/dark-side.mp3");
+	var vaderNoooooo = new Audio("sounds/vader-noooooo.mp3");
+	var lightsaberDuel = new Audio("sounds/lightsaber-duel.mp3");
 	
 	$(".box").click(function() {
 		clickNumber += 1;
 		if ($(this).hasClass('X') || $(this).hasClass("O")) {
 			$(".status").text("That box has already been taken! You lose your turn!");
+			vaderNoooooo.play();
 		} else if (clickNumber % 2 === 1) {
 			$(this).addClass("X");
 			if (checkPlayerWinner("X")) {
 				$(".status").text("Player X has won!");
 				$(".box").off("click");
+				themeSong.play();
 			} else if (endGame()) {
 				$(".status").text("IT'S A TIE!");
+				lightsaberDuel.play();
 			} else {
 				$(".status").text("Player O moves!");
+				xWing.play();
 			}
 		} else {
 			$(this).addClass("O");
 			if (checkPlayerWinner("O")) {
 				$(".status").text("Player O has won!");
 				$(".box").off("click");
+				darkSide.play();
 			} else {
 				$(".status").text("Player X moves!");
+				thatsNoMoon.play();
 			}
 		}	
 	});
@@ -62,50 +76,6 @@ $(function(){
 			return true;
 		}
 	}
-
-	// var checkPlayerOneWinner = function() {
-		// if ($(".one.X").length === firstRow.length) {
-		// 	alert("Player One wins!");
-		// } else if ($(".two.X").length === secondRow.length) {
-		// 	alert("Player One wins!");
-		// } else if ($(".three.X").length === thirdRow.length) {
-		// 	alert("Player One wins!");
-		// } else if ($(".A.X").length === firstColumn.length) {
-		// 	alert("Player One wins!");
-		// } else if ($(".B.X").length === secondColumn.length) {
-		// 	alert("Player One wins!");
-		// } else if ($(".C.X").length === thirdColumn.length) {
-		// 	alert("Player One wins!");
-		// } else if ($(".one.A").hasClass("X") && $(".two.B").hasClass("X") && $(".three.C").hasClass("X")) {
-		// 	alert("Player One wins!");
-		// } else if ($(".one.C").hasClass("X") && $(".two.B").hasClass("X") && $(".three.A").hasClass("X")) {
-		// 	alert("Player One wins!");
-		// } else {
-		// 	return false;
-		// }
-	// }
-
-	// var checkPlayerTwoWinner = function() {
-	// 	if ($(".one.O").length === firstRow.length) {
-	// 		alert("Player Two wins!");
-	// 	} else if ($(".two.O").length === secondRow.length) {
-	// 		alert("Player Two wins!");
-	// 	} else if ($(".three.O").length === thirdRow.length) {
-	// 		alert("Player Two wins!");
-	// 	} else if ($(".A.O").length === firstColumn.length) {
-	// 		alert("Player Two wins!");
-	// 	} else if ($(".B.O").length === secondColumn.length) {
-	// 		alert("Player Two wins!");
-	// 	} else if ($(".C.O").length === thirdColumn.length) {
-	// 		alert("Player Two wins!");
-	// 	} else if ($(".one.A").hasClass("O") && $(".two.B").hasClass("O") && $(".three.C").hasClass("O")) {
-	// 		alert("Player Two wins!");
-	// 	} else if ($(".one.C").hasClass("O") && $(".two.B").hasClass("O") && $(".three.A").hasClass("O")) {
-	// 		alert("Player Two wins!");
-	// 	} else {
-	// 		return false;
-	// 	}
-	// }
 
 	//Console Version
 	// var game = [

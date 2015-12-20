@@ -67,12 +67,12 @@ div.C {
 }
 
 div.X {
-	background-image: url("images/letter-x.png");
+	background-image: url("images/x-wing.png");
 	background-size: 170px 170px;
 }
 
 div.O {
-	background-image: url("images/letter-o.png");
+	background-image: url("images/death-star-edited.png");
 	background-size: 170px 170px;
 }
 
@@ -84,18 +84,18 @@ div.status {
 	font-family: Helvetica;
 	color: yellow;
 	float: left;
-	text-align: justify;
+	/*text-align: justify;*/
 	margin-left: 50px;
-	transform-origin: 50% 100%;
+	/*transform-origin: 50% 100%;
 	transform: perspective(500px) rotateX(25deg);
-	animation: scroll100s linear 0s;
+	animation: scroll 100s linear 0s;*/
 }
 
-@keyframes scroll {
+/*@keyframes scroll {
 	0% {
 		top: 1000%;
 	}
 	100% {
 		top: -500%;
 	}
-}
+}*/
