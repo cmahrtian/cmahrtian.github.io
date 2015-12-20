@@ -77,25 +77,18 @@ div.O {
 }
 
 div.status {
-	padding-top: 150px;
+	padding-top: 100px;
 	width: 435px;
 	font-size: 35pt;
 	font-weight: bold;
-	font-family: Helvetica;
+	text-align: left;
 	color: yellow;
 	float: left;
-	/*text-align: justify;*/
 	margin-left: 50px;
-	/*transform-origin: 50% 100%;
-	transform: perspective(500px) rotateX(25deg);
-	animation: scroll 100s linear 0s;*/
 }
 
-/*@keyframes scroll {
-	0% {
-		top: 1000%;
-	}
-	100% {
-		top: -500%;
-	}
-}*/
+.status p {
+	font-family: Helvetica;
+	line-height: 65px;
+	transform: perspective(500px) rotateX(25deg);
+}

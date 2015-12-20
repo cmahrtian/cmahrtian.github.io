@@ -1,7 +1,7 @@
 $(function(){
 	"use strict";
 
-	//JQuery Version
+	//Global Variables
 	var firstRow = $(".one");
 	var secondRow = $(".two");
 	var thirdRow = $(".three");
@@ -20,30 +20,30 @@ $(function(){
 	
 	$(".box").click(function() {
 		clickNumber += 1;
-		if ($(this).hasClass('X') || $(this).hasClass("O")) {
-			$(".status").text("That box has already been taken! You lose your turn!");
+		if ($(this).hasClass("X") || $(this).hasClass("O")) {
+			$("p").text("That box has already been taken! You lose your turn!");
 			vaderNoooooo.play();
 		} else if (clickNumber % 2 === 1) {
 			$(this).addClass("X");
 			if (checkPlayerWinner("X")) {
-				$(".status").text("Player X has won!");
+				$("p").text("Player X has won!");
 				$(".box").off("click");
 				themeSong.play();
 			} else if (endGame()) {
-				$(".status").text("IT'S A TIE!");
+				$("p").text("IT'S A TIE!");
 				lightsaberDuel.play();
 			} else {
-				$(".status").text("Player O moves!");
+				$("p").text("Player O moves!");
 				xWing.play();
 			}
 		} else {
 			$(this).addClass("O");
 			if (checkPlayerWinner("O")) {
-				$(".status").text("Player O has won!");
+				$("p").text("Player O has won!");
 				$(".box").off("click");
 				darkSide.play();
 			} else {
-				$(".status").text("Player X moves!");
+				$("p").text("Player X moves!");
 				thatsNoMoon.play();
 			}
 		}	
