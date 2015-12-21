@@ -32,6 +32,7 @@ $(function(){
 					themeSong.play();
 				} else if (endGame()) {
 					$("p").text("IT'S A TIE!");
+					$(".box").off("click");
 					lightsaberDuel.play();
 				} else {
 					$("p").text("Player O moves!");
