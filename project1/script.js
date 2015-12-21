@@ -19,32 +19,34 @@ $(function(){
 	var lightsaberDuel = new Audio("sounds/lightsaber-duel.mp3");
 	
 	$(".box").click(function() {
-		clickNumber += 1;
 		if ($(this).hasClass("X") || $(this).hasClass("O")) {
-			$("p").text("That box has already been taken! You lose your turn!");
+			$("p").text("That box has already been taken!");
 			vaderNoooooo.play();
-		} else if (clickNumber % 2 === 1) {
-			$(this).addClass("X");
-			if (checkPlayerWinner("X")) {
-				$("p").text("Player X has won!");
-				$(".box").off("click");
-				themeSong.play();
-			} else if (endGame()) {
-				$("p").text("IT'S A TIE!");
-				lightsaberDuel.play();
-			} else {
-				$("p").text("Player O moves!");
-				xWing.play();
-			}
 		} else {
-			$(this).addClass("O");
-			if (checkPlayerWinner("O")) {
-				$("p").text("Player O has won!");
-				$(".box").off("click");
-				darkSide.play();
+			clickNumber += 1;
+			if (clickNumber % 2 === 1) {
+				$(this).addClass("X");
+				if (checkPlayerWinner("X")) {
+					$("p").text("Player X has won!");
+					$(".box").off("click");
+					themeSong.play();
+				} else if (endGame()) {
+					$("p").text("IT'S A TIE!");
+					lightsaberDuel.play();
+				} else {
+					$("p").text("Player O moves!");
+					xWing.play();
+				}
 			} else {
-				$("p").text("Player X moves!");
-				thatsNoMoon.play();
+				$(this).addClass("O");
+				if (checkPlayerWinner("O")) {
+					$("p").text("Player O has won!");
+					$(".box").off("click");
+					darkSide.play();
+				} else {
+					$("p").text("Player X moves!");
+					thatsNoMoon.play();
+				}
 			}
 		}	
 	});
