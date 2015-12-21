@@ -24,6 +24,4 @@ Even in a time of (star) war(s), there are rules. As a reminder, the sequence of
   2. Player O will make the second move, claiming a box with the same method described in Step 1.
   3. Players X and O alternate moves until either one player links three boxes in a row horizontally, vertically or diagonally (resulting in a victory for that player) or all nine boxes on the board are filled with no victor, which results in a tie.
 
-**ONE VERY IMPORTANT RULE TO FOLLOW:** Clicking on a box that has already been claimed for either X or O will result in a loss of turn. Be sure to avoid an itchy trigger finger, or it could mean the difference in the game.
-
-Additionally, it is recommended by the game's creator to play the game with the sound of the computer on. Several sound effects consisting of iconic moments from the franchise - none of which come from "The Force Awakens," so no need to worry about any spoilers - have been built into the game for your listening and nostalgic pleasure.
+It is recommended by the game's creator to play the game with the sound of the computer on. Several sound effects consisting of iconic moments from the franchise - none of which come from "The Force Awakens," so no need to worry about any spoilers - have been built into the game for your listening and nostalgic pleasure.
