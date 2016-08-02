@@ -31,13 +31,13 @@ header img {
 }
 /*CSS hack that allows board and status <div> to display side-by-side (Ed showed me this one).*/
 .clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
 .clearfix { display: inline-block; }
 
 div.box {
@@ -92,6 +92,6 @@ div.status {
 .status p {
 	font-family: Helvetica;
 	line-height: 65px;
-	/*Makes 3D-looking, t6ilts angle of text to 25 degrees*/
+	/*Makes 3D-looking, tilts angle of text to 25 degrees*/
 	transform: perspective(500px) rotateX(25deg);
 }
